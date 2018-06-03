@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Contact } from '../../models/contact';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-contact',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-
-  constructor() { }
+  @Input('contact') contact: Contact;
+  constructor(public dataService: DataService) { }
 
   ngOnInit() {
   }
-
+  deleteContact(contact: Contact) {
+    const response = confirm ("Are you sure to delete contact?");
+    if (response) {
+      this.dataService.deleteContact(contact);
+    }
+  }
 }

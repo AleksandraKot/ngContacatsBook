@@ -8,6 +8,8 @@ import { ContactAddComponent } from './components/contact-add/contact-add.compon
 import { ContactListComponent } from './components/contact-list/contact-list.component';
 import { ContactComponent } from './components/contact/contact.component';
 import {DataService} from './services/data.service';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import {DataService} from './services/data.service';
     NavbarComponent,
     ContactAddComponent,
     ContactListComponent,
-    ContactComponent
+    ContactComponent,
+    SearchBarComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

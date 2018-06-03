@@ -1,3 +1,17 @@
-<p>
-  contact works!
-</p>
+<div>
+    <li class="list-group-item">
+      <div class="row">
+      <h6 class="col-10 align-middle" style="line-height: 30px">
+        {{contact.name}} {{contact.surname}} {{contact.phoneNumber}}
+      </h6>
+      <div class="col-2">
+        <a href="#" (click)="editContact" class="btn btn-primary">
+          Edit
+        </a>
+        <a href="#" (click)="deleteContact" class="btn btn-danger">
+          Delete
+        </a>
+      </div>
+      </div>
+      </li>
+    </div>
