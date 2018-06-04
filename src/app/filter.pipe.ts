@@ -14,7 +14,10 @@ export class FilterPipe implements PipeTransform {
     searchText = searchText.toLowerCase();
 
     return contacts.filter(el => {
-      return el.name.toLowerCase().includes(searchText);
+      return el.name.toLowerCase().includes(searchText) 
+      || el.surname.toLowerCase().includes(searchText) 
+      || el.phoneNumber.toString().includes(searchText);
+
   });
   }
 }

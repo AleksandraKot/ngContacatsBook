@@ -1,6 +1,10 @@
 <app-contact-add (contactAdded)="addContact($event)"></app-contact-add>
 <app-search-bar (searchText)="setSearchText($event)"></app-search-bar>
-<div class="card-header">My contacts:</div>
-<div class="container">
-  <app-contact class="col-md-4 p-2" *ngFor="let contact of contacts | filter: searchText" [contact]="contact"></app-contact>
-</div>
+<h5 class="border-bottom border-gray pb-2 mb-0">List of contacts:</h5>
+<div class="row">
+      <span class="col">Name</span>
+      <span class="col">Surname</span>
+      <span class="col">Phone number</span>
+      <span class="col text-right">Action</span>
+    </div>
+      <app-contact *ngFor="let contact of contacts | filter: searchText" [contact]="contact"></app-contact>

@@ -13,10 +13,21 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
   }
-  deleteContact(contact: Contact) {
+
+  deleteContact() {
     const response = confirm ("Are you sure to delete contact?");
     if (response) {
-      this.dataService.deleteContact(contact);
+      this.dataService.deleteContact(this.contact);
     }
+  }
+  currentlyEditing: boolean;
+
+  editContact() {
+    this.currentlyEditing = true;
+  }
+
+  saveContact() {
+    this.currentlyEditing = false;
+    this.dataService.updateContact(this.contact);
   }
 }

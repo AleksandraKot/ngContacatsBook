@@ -35,9 +35,18 @@ export class DataService {
   }
 
   deleteContact(contact: Contact) {
-    for (var i = 0; this.contacts.length; i++) {
+    for (var i = 0; i < this.contacts.length; i++) {
       if (contact == this.contacts[i]) {
         this.contacts.splice(i, 1);
+        localStorage.setItem('contacts', JSON.stringify(this.contacts));
+      }
+    }
+  }
+
+  updateContact(contact: Contact) {
+    for (var i = 0; i < this.contacts.length; i++) {
+      if (contact == this.contacts[i]) {
+        this.contacts[i] = contact;
         localStorage.setItem('contacts', JSON.stringify(this.contacts));
       }
     }
