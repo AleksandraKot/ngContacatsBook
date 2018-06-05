@@ -15,13 +15,13 @@ export class ContactComponent implements OnInit {
   }
 
   deleteContact() {
-    const response = confirm ("Are you sure to delete contact?");
+    const response = confirm("Are you sure to delete contact?");
     if (response) {
       this.dataService.deleteContact(this.contact);
     }
   }
-  currentlyEditing: boolean;
 
+  currentlyEditing: boolean;
   editContact() {
     this.currentlyEditing = true;
   }

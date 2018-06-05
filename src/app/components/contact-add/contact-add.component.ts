@@ -1,7 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 import { Contact } from '../../models/contact';
-// import { Output } from '@angular/core/src/metadata/directives';
 
 @Component({
   selector: 'app-contact-add',
@@ -13,19 +12,19 @@ export class ContactAddComponent implements OnInit {
   surname: string;
   phoneNumber: number;
   @Output() contactAdded = new EventEmitter<Contact>();
-   constructor() { }
+  constructor() { }
 
   ngOnInit() {
   }
 
   addContact() {
-
     this.contactAdded.emit({
       name: this.name,
       surname: this.surname,
       phoneNumber: this.phoneNumber
     })
     this.name = '';
-    this.surname= '';
+    this.surname = '';
+    this.phoneNumber = null;
   }
 }

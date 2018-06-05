@@ -1,17 +1,19 @@
-<div class="row border-bottom border-gray pb-2" style="line-height: 60px">
-      <input type="text" class="col" [(ngModel)]="contact.name" [disabled]="!currentlyEditing">
-      <input type="text" class="col" [(ngModel)]="contact.surname" [disabled]="!currentlyEditing">
-      <input type="number" class="col" [(ngModel)]="contact.phoneNumber" [disabled]="!currentlyEditing">
-      <div class="col text-right align-middle">
-        <a href="#" (click)="saveContact(contact)" *ngIf="currentlyEditing" class="btn btn-primary">
-          Save
-        </a>
-        <a href="#" (click)="editContact()" *ngIf="!currentlyEditing" class="btn btn-primary">
-          Edit
-        </a>
-        <a href="#" (click)="deleteContact()" class="btn btn-danger">
-          Delete
-        </a>
-      </div>
-    </div>
-  
+<div class="row border-bottom border-gray pb-2" style="line-height: 50px">
+  <input type="text" class="col form-control" [(ngModel)]="contact.name" *ngIf="currentlyEditing">
+  <span class="col" *ngIf="!currentlyEditing">{{contact.name}}</span>
+  <input type="text" class="col form-control" [(ngModel)]="contact.surname" *ngIf="currentlyEditing">
+  <span class="col" *ngIf="!currentlyEditing">{{contact.surname}}</span>
+  <input type="text" class="col form-control" [(ngModel)]="contact.phoneNumber" *ngIf="currentlyEditing">
+  <span class="col" *ngIf="!currentlyEditing">{{contact.phoneNumber}}</span>
+  <div class="col text-right align-middle">
+    <a href="#" (click)="saveContact(contact)" *ngIf="currentlyEditing" class="btn btn-primary">
+      Save
+    </a>
+    <a href="#" (click)="editContact()" *ngIf="!currentlyEditing" class="btn btn-primary">
+      Edit
+    </a>
+    <a href="#" (click)="deleteContact()" class="btn btn-danger">
+      Delete
+    </a>
+  </div>
+</div>
